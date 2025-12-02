@@ -1,0 +1,174 @@
+/* Скидання базових відступів */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* Container utility - центрує контент */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ccc; /* Сірий колір лого як на макеті */
+    text-transform: lowercase;
+}
+
+/* Меню гамбургер */
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    width: 100%;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 500px; /* Обмеження висоти для десктопу */
+}
+
+/* --- CONTENT SECTION --- */
+.content {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.content h1 {
+    font-weight: 300;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.description {
+    max-width: 700px;
+    margin: 0 auto 60px auto; /* Великий відступ знизу до карток */
+    color: #666;
+    font-size: 16px;
+}
+
+/* --- CARDS GRID --- */
+.cards-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Стиль картки */
+.card {
+    flex: 1; /* Рівна ширина для всіх карток */
+    min-width: 200px;
+    border: 2px solid #ff8c00; /* Помаранчева рамка */
+    padding: 40px 15px 30px 15px;
+    position: relative; /* Для позиціонування іконки */
+    margin-top: 30px; /* Місце для іконки, що виступає зверху */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+/* Іконка зверху */
+.icon-wrapper {
+    position: absolute;
+    top: -30px; /* Піднімаємо іконку вгору на половину її розміру */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    background-color: #fff; /* Білий фон перекриває рамку картки */
+    padding: 0 15px; /* Відступи, щоб рамка не прилипала до іконки */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrapper svg {
+    width: 40px;
+    height: 40px;
+    stroke: #ff8c00; /* Помаранчевий колір ліній */
+}
+
+/* Ефект наведення (Завдання 4 - активні елементи) */
+.card:hover {
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+    cursor: default;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #333; /* Темно-сірий фон */
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 12px;
+}
+
+/* --- RESPONSIVE / MOBILE (Media Queries) --- */
+/* Завдання 5: Коректне відображення на двох типах екранів */
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .hero img {
+        height: 250px; /* Зменшуємо висоту картинки на мобільному */
+    }
+    
+    .cards-grid {
+        flex-direction: column; /* Елементи стають вертикально */
+        gap: 50px; /* Збільшуємо відступ між картками, бо іконки виступають */
+    }
+
+    .card {
+        width: 100%; /* Картка займає всю ширину */
+        flex: none;
+    }
+}
